@@ -22,12 +22,16 @@
       <td> {{client.firstName}}  {{client.lastName}} </td>
       <td> {{client.email}} </td>
       <td> {{client.balance | currency}} </td>
-      <td>  </td>
+      <td> 
+        <a routerLink="client/{{ client.id }}" class="btn btn-secondary btn-sm">
+          <i class="fa fa-arrow-circle-o-right"></i> Details
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>
 
 <ng-template #noClients>
   <hr>
-  <h5>THERE ARE NO CLIENTS. JAFAR (((</h5>
+  <h5>THERE ARE NO CLIENTS</h5>
 </ng-template>
