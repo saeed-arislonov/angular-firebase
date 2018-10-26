@@ -48,4 +48,11 @@ export class ClientDetailsComponent implements OnInit {
     });
   }
 
+  onDeleteClick() {
+    if (confirm('Are you sure')) {
+      this.clientService.deleteClient(this.client);
+      this.router.navigate(['/']);
+    }
+  }
+
 }
