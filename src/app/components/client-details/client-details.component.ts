@@ -33,7 +33,8 @@ export class ClientDetailsComponent implements OnInit {
           this.hasBalance = true;
         }
       }
-      if (client.balance === null) {
+      console.log(client);
+      if (client != null && client.balance == null) {
         client.balance = 0;
       }
       this.client = client;
@@ -51,6 +52,9 @@ export class ClientDetailsComponent implements OnInit {
   onDeleteClick() {
     if (confirm('Are you sure')) {
       this.clientService.deleteClient(this.client);
+      this.flashMessage.show('Client removed', {
+        cssClass: 'alert-success', timeout: 4000
+      });
       this.router.navigate(['/']);
     }
   }
