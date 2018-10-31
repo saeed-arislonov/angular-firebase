@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
           cssClass: 'alert alert-success',
           timeout: 4000
         });
-        this.router.navigate(['/'])
+        this.router.navigate(['/']);
       })
       .catch(err => {
         this.flashMessage.show(err.message, {
